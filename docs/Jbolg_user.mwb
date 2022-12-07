@@ -1,0 +1,13 @@
+show tables;
+desc blog;
+desc category;
+desc post;
+desc user;
+
+select * from user;
+
+insert into user values("bbc02131","여관규","1234");
+insert into user values(#{id },#{name }{,#{password });
+
+selet id, password form user ;
+
