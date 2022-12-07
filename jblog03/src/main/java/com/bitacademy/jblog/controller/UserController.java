@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.bitacademy.jblog.service.UserService;
-import com.bitacademy.jblog.vo.BlogVo;
-import com.bitacademy.jblog.vo.CategoryVo;
 import com.bitacademy.jblog.vo.UserVo;
 
 @Controller
@@ -43,12 +41,6 @@ public class UserController {
 			//model.addAttribute("userVo",userVo);
 			return "user/join";
 		}
-//		blogvo.setTitle(uservo.getName()+"의 블로그");
-//		blogvo.setProfile("profile");
-//		categoryVo.setTitle("기본 카테고리");
-//		
-//		blogvo.setUser_id(uservo.getId());
-//		categoryVo.setId(uservo.getId());
 		
 		userService.join(uservo);
 		System.out.println("UserRepository:"+uservo);
@@ -66,10 +58,5 @@ public class UserController {
 
 		return "user/login";
 	}
-//	@RequestMapping(value = "/login", method = RequestMethod.POST)
-//	public String login() {
-//
-//		return "user/login";
-//	}
 
 }

@@ -23,6 +23,13 @@ public class UserRepository {
 		
 		return count ==1;
 	}
+	
+	public UserVo findByIdAndPassword(String id, String password) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("id", id);
+		map.put("password", password);
+		return sqlSession.selectOne("user.findByIdlAndPassword",map);
+	}
 
 //----------------------------------------------------------------------------------------------------
 	
@@ -31,7 +38,7 @@ public class UserRepository {
 		map.put("id", id);
 		map.put("password", password);
 		
-		return sqlSession.selectOne("user.login",map);
+		return sqlSession.selectOne("user.findByIdlAndPassword",map);
 	}
 	
 }

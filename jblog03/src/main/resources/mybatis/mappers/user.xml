@@ -9,12 +9,13 @@
 		]]>
 	</insert>
 	
-	<select id="login" resultType="uservo" parameterType="map">
+
+	
+	<select id="findByIdAndPassword" resultType="uservo"	parameterType="map">
 		<![CDATA[
-		select password 
-		from user 
-		where id=#{id }
-		and password=#{password }
+		select id, name
+		  from user
+		 where id=#{id } and password=#{password }
 		]]>
 	</select>
 	
