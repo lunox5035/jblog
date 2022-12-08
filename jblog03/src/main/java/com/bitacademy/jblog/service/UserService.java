@@ -22,15 +22,15 @@ public class UserService {
 
 //----------------------------------------------------------------------------------------------------
 	public void join(UserVo userVo,BlogVo blogVo,CategoryVo categoryVo) {
-		System.out.println("userVo:"+userVo);
+//		System.out.println("userVo:"+userVo);
 
 		blogVo.setTitle(userVo.getName()+"님의 블로그");
 		blogVo.setId(userVo.getId());
 		
 		categoryVo.setId(userVo.getId());
 		
-		System.out.println("blogVo:"+blogVo);
-		System.out.println("categoryVo:"+categoryVo);
+//		System.out.println("blogVo:"+blogVo);
+//		System.out.println("categoryVo:"+categoryVo);
 		
 		userRepository.insert(userVo);
 		blogRepository.insert(blogVo);
@@ -40,10 +40,15 @@ public class UserService {
 
 //----------------------------------------------------------------------------------------------------
 
-	public UserVo login(String id, String password) {
-		return userRepository.logIn(id, password);
-		
+	public UserVo login(UserVo userVo) {
+		return login(userVo.getId(), userVo.getPassword());
 	}
+
+	public UserVo login(String id, String password) {
+		return userRepository.findUser(id, password);
+	}
+
+	
 		
 
 }

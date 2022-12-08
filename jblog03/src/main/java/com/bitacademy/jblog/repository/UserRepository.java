@@ -18,15 +18,15 @@ public class UserRepository {
 //----------------------------------------------------------------------------------------------------
 
 	public void insert(UserVo vo) {
-		System.out.println("1.userVo:"+vo);
+//		System.out.println("1.userVo:"+vo);
 		sqlSession.insert("user.insert", vo);
-		System.out.println("2.userVo:"+vo);
+//		System.out.println("2.userVo:"+vo);
 		
 	}
 	
 //----------------------------------------------------------------------------------------------------
 	
-	public UserVo logIn(String id, String password) {
+	public UserVo findUser(String id, String password) {
 		Map<String, Object> map =new HashMap<>();
 		map.put("id", id);
 		map.put("password", password);
