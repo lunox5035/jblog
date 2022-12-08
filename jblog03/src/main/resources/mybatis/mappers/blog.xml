@@ -3,7 +3,7 @@
 <mapper namespace="blog">
 	<select id="findAll" resultType="blogvo">
 		<![CDATA[
-			select a.user_id as ID, a.title,a.profile,b.no, b.title as categoryTitle,c.title as postTitle, c.content, c.reg_date as regDate
+			select a.user_id as id, a.title, a.profile, b.no, b.title as categoryTitle, c.title as postTitle, c.content, c.reg_date as regDate
 			from blog a, category b, post c
 			where a.user_id= b.id and b.no=c.category_no
 		]]>
@@ -11,9 +11,7 @@
 
 	<insert id="insert" parameterType="blogvo">
 		<![CDATA[
-			insert 
-				into blog 
-				value(#{id }, #{title }, #{profile })
+			insert into blog values(#{id }, #{title }, #{profile })
 		]]>
 	</insert>
 </mapper>

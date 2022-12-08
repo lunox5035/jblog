@@ -2,7 +2,7 @@ package com.bitacademy.jblog.vo;
 
 public class BlogVo {
 
-	private String ID;
+	private String id;
 	private String title;
 	private String profile;
 	private Long no;
@@ -11,12 +11,11 @@ public class BlogVo {
 	private String content;
 	private String regDate;
 	
-	
-	public String getID() {
-		return ID;
+	public String getId() {
+		return id;
 	}
-	public void setID(String iD) {
-		ID = iD;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getTitle() {
 		return title;
@@ -60,12 +59,12 @@ public class BlogVo {
 	public void setRegDate(String regDate) {
 		this.regDate = regDate;
 	}
-	
 	@Override
 	public String toString() {
-		return "BlogVo [ID=" + ID + ", title=" + title + ", profile=" + profile + ", no=" + no + ", categoryTitle="
+		return "BlogVo [id=" + id + ", title=" + title + ", profile=" + profile + ", no=" + no + ", categoryTitle="
 				+ categoryTitle + ", postTitle=" + postTitle + ", content=" + content + ", regDate=" + regDate + "]";
 	}
+	
 	
 	
 }

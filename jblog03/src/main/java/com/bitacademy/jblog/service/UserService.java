@@ -25,7 +25,7 @@ public class UserService {
 		System.out.println("userVo:"+userVo);
 
 		blogVo.setTitle(userVo.getName()+"님의 블로그");
-		blogVo.setID(userVo.getId());
+		blogVo.setId(userVo.getId());
 		
 		categoryVo.setId(userVo.getId());
 		
