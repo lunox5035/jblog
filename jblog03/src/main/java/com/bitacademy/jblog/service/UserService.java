@@ -23,7 +23,7 @@ public class UserService {
 //----------------------------------------------------------------------------------------------------
 
 	public UserVo login(String id, String password) {
-		return userRepository.findByIdAndPassword(id, password);
+		return userRepository.logIn(id, password);
 		
 	}
 		
