@@ -2,16 +2,21 @@ package com.bitacademy.jblog.vo;
 
 public class BlogVo {
 
-	private String user_id;
-	@Override
-	public String toString() {
-		return "BlogVo [user_id=" + user_id + ", title=" + title + ", profile=" + profile + "]";
+	private String ID;
+	private String title;
+	private String profile;
+	private Long no;
+	private String categoryTitle;
+	private String postTitle;
+	private String content;
+	private String regDate;
+	
+	
+	public String getID() {
+		return ID;
 	}
-	public String getUser_id() {
-		return user_id;
-	}
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
+	public void setID(String iD) {
+		ID = iD;
 	}
 	public String getTitle() {
 		return title;
@@ -25,6 +30,42 @@ public class BlogVo {
 	public void setProfile(String profile) {
 		this.profile = profile;
 	}
-	private String title;
-	private String profile;
+	public Long getNo() {
+		return no;
+	}
+	public void setNo(Long no) {
+		this.no = no;
+	}
+	public String getCategoryTitle() {
+		return categoryTitle;
+	}
+	public void setCategoryTitle(String categoryTitle) {
+		this.categoryTitle = categoryTitle;
+	}
+	public String getPostTitle() {
+		return postTitle;
+	}
+	public void setPostTitle(String postTitle) {
+		this.postTitle = postTitle;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public String getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
+	}
+	
+	@Override
+	public String toString() {
+		return "BlogVo [ID=" + ID + ", title=" + title + ", profile=" + profile + ", no=" + no + ", categoryTitle="
+				+ categoryTitle + ", postTitle=" + postTitle + ", content=" + content + ", regDate=" + regDate + "]";
+	}
+	
+	
 }

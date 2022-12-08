@@ -14,6 +14,8 @@ public class BlogRepository {
 	
 	// 블로그 생성
 	public void insert(BlogVo vo) {
+		System.out.println("blogVo:"+vo);
+		vo.setProfile("기본 프로필");
 		sqlSession.insert("blog.insert", vo);
 	}
 }

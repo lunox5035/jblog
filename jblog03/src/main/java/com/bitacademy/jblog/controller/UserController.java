@@ -1,19 +1,14 @@
 package com.bitacademy.jblog.controller;
 
-import java.util.List;
-
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.bitacademy.jblog.service.UserService;
+import com.bitacademy.jblog.vo.BlogVo;
+import com.bitacademy.jblog.vo.CategoryVo;
 import com.bitacademy.jblog.vo.UserVo;
 
 @Controller
@@ -29,21 +24,8 @@ public class UserController {
 		return "user/join";
 	}
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
-	public String join(@ModelAttribute @Valid UserVo uservo,BindingResult result, Model model) {
-		if (result.hasErrors()){
-			List<ObjectError> errors =result.getAllErrors();
-			for(ObjectError error : errors) {
-				System.out.println(error);
-			}
-			
-			model.addAllAttributes(result.getModel());
-			//대체가능
-			//model.addAttribute("userVo",userVo);
-			return "user/join";
-		}
-		
-		userService.join(uservo);
-		System.out.println("UserRepository:"+uservo);
+	public String join(UserVo userVo,BlogVo blogVo,CategoryVo categoryVo) {
+		userService.join(userVo,blogVo,categoryVo);
 		
 		return "redirect:/user/joinsuccess";
 	}

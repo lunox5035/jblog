@@ -25,7 +25,7 @@ public class BlogController {
 		}
 		
 		
-		return "blog/index";
+		return "blog/main";
 	}
 	
 	@RequestMapping({"/admin","/admin/basic"})
