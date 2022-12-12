@@ -12,7 +12,7 @@
 <body>
 	<div class="center-content">
 		<h1 class="logo">JBlog</h1>
-		<c:import url="/WEB-INF/views/includes/header.jsp" />
+		<c:import url="/WEB-INF/views/includes/header_user.jsp" />
 		<form class="join-form" id="join-form" method="post" action="${pageContext.request.contextPath }/user/join">
 			<label class="block-label" for="name">이름</label>
 			<input id="name"name="name" type="text" value="">

@@ -26,12 +26,13 @@ public class UserRepository {
 	
 //----------------------------------------------------------------------------------------------------
 	
-	public UserVo findUser(String id, String password) {
+	public UserVo findByIdlAndPassword(String id, String password) {
 		Map<String, Object> map =new HashMap<>();
 		map.put("id", id);
 		map.put("password", password);
 		
-		return sqlSession.selectOne("user.findByIdlAndPassword",map);
+		return (UserVo)sqlSession.selectOne("user.findByIdlAndPassword",map);
+		
 	}
 	
 }

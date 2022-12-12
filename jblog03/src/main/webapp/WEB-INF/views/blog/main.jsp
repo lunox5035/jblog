@@ -11,14 +11,7 @@
 </head>
 <body>
 	<div id="container">
-		<div id="header">
-			<h1>${blogvo.getTitle }</h1>
-			<ul>
-				<li><a href="${pageContext.request.contextPath}/user/login">로그인</a></li>
-				<li><a href="">로그아웃</a></li>
-				<li><a href="">블로그 관리</a></li>
-			</ul>
-		</div>
+		<c:import url="/WEB-INF/views/includes/header_blog.jsp" />
 		<div id="wrapper">
 			<div id="content">
 				<div class="blog-content">
@@ -44,8 +37,7 @@
 		<div id="navigation">
 			<h2>카테고리</h2>
 			<c:set var='count' value='${fn:length(list) }'/>
-			<c:forEach items='${list }' var='vo' varStatus='status'>
-					
+			<c:forEach items='${list }' var='vo' varStatus='status'>					
 			<ul>
 				<li><a href="">${categoryvo.getTitle }</a></li>
 
