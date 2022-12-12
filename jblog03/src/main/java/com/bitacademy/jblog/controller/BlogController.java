@@ -23,8 +23,7 @@ public class BlogController {
 		}else if(path2.isPresent()) {
 			categotyNo=path2.get();
 		}
-		
-		
+				
 		return "blog/main";
 	}
 	
