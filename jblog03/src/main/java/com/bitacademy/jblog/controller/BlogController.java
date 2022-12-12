@@ -20,6 +20,7 @@ public class BlogController {
 		
 		if(path1.isPresent()) {
 			categotyNo= path1.get();
+			
 		}else if(path2.isPresent()) {
 			categotyNo=path2.get();
 		}
