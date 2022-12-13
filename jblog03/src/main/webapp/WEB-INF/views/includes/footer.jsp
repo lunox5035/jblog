@@ -4,6 +4,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <div id="footer">
 	<p>
-		<strong>Spring 이야기</strong> is powered by JBlog (c)2016
+		<strong>${vo.title }</strong> is powered by JBlog (c)2016
 	</p>
 </div>

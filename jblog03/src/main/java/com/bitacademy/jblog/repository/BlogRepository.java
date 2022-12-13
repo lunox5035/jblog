@@ -1,5 +1,7 @@
 package com.bitacademy.jblog.repository;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,5 +21,17 @@ public class BlogRepository {
 //		System.out.println("3.blogVo:"+vo);
 		sqlSession.insert("blog.insert", vo);
 //		System.out.println("4.blogVo:"+vo);
+	}
+	
+	public List<BlogVo> findAll() {
+		return sqlSession.selectList("blog.findall");
+	}
+	
+	public BlogVo findById(String id) {
+		return sqlSession.selectOne("blog.findById",id);
+	}
+	
+	public void BasicUpdate(BlogVo vo) {
+		sqlSession.update("blog.BasicUpdate",vo);
 	}
 }

@@ -8,10 +8,25 @@
 			where a.user_id= b.id and b.no=c.category_no
 		]]>
 	</select>
+	
+	<select id="findById" resultType="blogvo">
+		<![CDATA[
+			select user_id,  title, profile
+			from blog
+			where #{id }= user_id
+		]]>
+	</select>
 
 	<insert id="insert" parameterType="blogvo">
 		<![CDATA[
 			insert into blog values(#{id }, #{title }, #{profile })
 		]]>
 	</insert>
+	
+	<update id="BasicUpdate">
+		<![CDATA[
+			update blog set title=#{title } 
+			where user_id=#{id }
+		]]>	
+	</update>
 </mapper>
