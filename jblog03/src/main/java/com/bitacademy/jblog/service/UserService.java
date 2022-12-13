@@ -40,8 +40,8 @@ public class UserService {
 
 //----------------------------------------------------------------------------------------------------
 
-	public UserVo findByIdlAndPassword(String id, String password) {
-		return userRepository.findByIdlAndPassword(id, password);
+	public UserVo findByIdAndPassword(String id, String password) {
+		return userRepository.findByIdAndPassword(id, password);
 	}
 
 	

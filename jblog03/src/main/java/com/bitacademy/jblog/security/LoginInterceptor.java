@@ -24,7 +24,7 @@ public class LoginInterceptor  implements HandlerInterceptor {
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 
-		UserVo authUser = userService.findByIdlAndPassword(id,password);
+		UserVo authUser = userService.findByIdAndPassword(id,password);
 		
 		if(authUser == null) {
 			request.setAttribute("id", id);

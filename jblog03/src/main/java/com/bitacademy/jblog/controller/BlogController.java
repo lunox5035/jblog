@@ -3,8 +3,10 @@ package com.bitacademy.jblog.controller;
 import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/{id:(?!assets).*}")
@@ -28,8 +30,23 @@ public class BlogController {
 		return "blog/main";
 	}
 	
-	@RequestMapping({"/admin","/admin/basic"})
+	@RequestMapping({"/admin", "/admin/basic"})
 	public String adminBasic(@PathVariable("id") String id) {
-		return"blog/admin-basic";
+		return "blog/admin-basic";
 	}
+
+	
+//	@RequestMapping(value = {"/admin","/admin/basic"}, method = RequestMethod.GET)
+//	public String adminBasic(@PathVariable("id") String id, Model model) {
+////		model.addAttribute(model);
+//		
+//		return "bolg/admin-basic";
+//	}
+//	
+//	@RequestMapping(value = {"/admin","/admin/basic"}, method = RequestMethod.POST)
+//	public String adminBasic(@PathVariable("id") String id) {
+//	
+//		return "redirect:/";
+//	}
+
 }

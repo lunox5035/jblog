@@ -13,9 +13,9 @@ public class LogoutInterceptor implements HandlerInterceptor{
 			HttpServletRequest request, 
 			HttpServletResponse response, 
 			Object handler) 
-			throws Exception {
-		
+			throws Exception {		
 		HttpSession session = request.getSession();
+
 		session.removeAttribute("authUser");
 		session.invalidate();
 		

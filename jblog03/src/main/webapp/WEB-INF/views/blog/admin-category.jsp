@@ -11,7 +11,14 @@
 </head>
 <body>
 	<div id="container">
-		<c:import url="/WEB-INF/views/includes/header_blog.jsp" />
+		<div id="header">
+			<h1>${vo.title }</h1>
+			<ul>
+				<li><a href="${pageContext.request.contextPath}/user/login">로그인</a></li>
+				<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
+				<li><a href="${pageContext.request.contextPath }">블로그 관리</a></li>
+			</ul>
+		</div>
 		<div id="wrapper">
 			<div id="content" class="full-screen">
 				<ul class="admin-menu">
@@ -67,11 +74,7 @@
 		      	</table> 
 			</div>
 		</div>
-		<div id="footer">
-			<p>
-				<strong>Spring 이야기</strong> is powered by JBlog (c)2016
-			</p>
-		</div>
+		<c:import url="/WEB-INF/views/includes/footer.jsp" />
 	</div>
 </body>
 </html>

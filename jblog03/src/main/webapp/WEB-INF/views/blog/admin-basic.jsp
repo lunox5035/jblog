@@ -11,7 +11,12 @@
 </head>
 <body>
 	<div id="container">
-		<c:import url="/WEB-INF/views/includes/header_blog.jsp" />
+		<div id="header">
+			<h1>admin basic</h1>
+			<ul>
+				<c:import url="/WEB-INF/views/includes/header.jsp" />
+			</ul>
+		</div>
 		<div id="wrapper">
 			<div id="content" class="full-screen">
 				<ul class="admin-menu">
@@ -41,11 +46,7 @@
 				</form>
 			</div>
 		</div>
-		<div id="footer">
-			<p>
-				<strong>Spring 이야기</strong> is powered by JBlog (c)2016
-			</p>
-		</div>
+		<c:import url="/WEB-INF/views/includes/footer.jsp" />
 	</div>
 </body>
 </html>
