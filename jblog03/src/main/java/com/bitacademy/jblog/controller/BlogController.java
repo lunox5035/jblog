@@ -38,24 +38,26 @@ public class BlogController {
 	}
 	
 //================================회원정보 수정======================================================	
-	@RequestMapping({"/admin", "/admin/basic"})
-	public String adminBasic(@PathVariable("id") String id) {
+//	@RequestMapping(value = {"/admin","/admin/basic"}, method = RequestMethod.GET)
+//	public String adminBasic(@PathVariable("id") String id) {
+//		return "blog/admin-basic";
+//	}
+
+	@RequestMapping(value = {"/admin","/admin/basic"}, method = RequestMethod.GET)
+	public String adminBasic(@PathVariable("id") String id, Model model) {
+		model.addAttribute("id",id);
+		
 		return "blog/admin-basic";
 	}
-
-//	@RequestMapping(value = {"/admin","/admin/basic"}, method = RequestMethod.GET)
-//	public String adminBasic(@PathVariable("id") String id, Model model) {
-//		model.addAttribute("id",id);
-//		
-//		return "bolg/admin-basic";
-//	}
 //	
-//	@RequestMapping(value = {"/admin","/admin/basic"}, method = RequestMethod.POST)
-//	public String adminBasic(@PathVariable("id") String id, BlogVo vo) {
-//		vo.setId(id);
-//		blogService.BasicUpdate(vo);
-//		return "redirect:/+id";
-//	}
-////===============================================================================================	
+	@RequestMapping(value = {"/admin","/admin/basic"}, method = RequestMethod.POST)
+	public String adminBasic(@PathVariable("id") String id, BlogVo vo) {
+		vo.setId(id);
+		blogService.BasicUpdate(vo);
+		return "redirect:/+id";
+	}
+//===========================카테고리 수정===========================================================	
 
+	
+//=================================글쓰기==========================================================	
 }
