@@ -7,4 +7,13 @@
 		]]>
 	</insert>
 	
+	<select id="findAllById" resultType="blogvo">
+		<![CDATA[
+			select no,title,content,reg_date,category_no 
+			from post 
+			where id = #{id }
+		
+		]]>
+	</select>
+	
 </mapper>
