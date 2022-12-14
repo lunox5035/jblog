@@ -1,5 +1,6 @@
 package com.bitacademy.jblog.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.bitacademy.jblog.service.BlogService;
 import com.bitacademy.jblog.vo.BlogVo;
+import com.bitacademy.jblog.vo.CategoryVo;
 
 @Controller
 @RequestMapping("/{id:(?!assets).*}")
@@ -19,11 +21,29 @@ public class BlogController {
 	@Autowired
 	private BlogService blogService;
 //===============================================================================================	
+//	@RequestMapping({"", "/{path1}", "/{path1}/{path2}"})
+//	public String index(
+//			@PathVariable("id") String id,
+//			@PathVariable("path1") Optional<Long> path1,
+//			@PathVariable("path2") Optional<Long> path2){
+//		Long categotyNo = 0L;
+//		Long postNo = 0L;
+//		
+//		if(path1.isPresent()) {
+//			categotyNo= path1.get();
+//			
+//		}else if(path2.isPresent()) {
+//			categotyNo=path2.get();
+//		}
+//			
+//		return "blog/main";
+//	}
 	@RequestMapping({"", "/{path1}", "/{path1}/{path2}"})
 	public String index(
 			@PathVariable("id") String id,
 			@PathVariable("path1") Optional<Long> path1,
-			@PathVariable("path2") Optional<Long> path2){
+			@PathVariable("path2") Optional<Long> path2,
+			Model model,BlogVo vo){
 		Long categotyNo = 0L;
 		Long postNo = 0L;
 		
@@ -33,11 +53,16 @@ public class BlogController {
 		}else if(path2.isPresent()) {
 			categotyNo=path2.get();
 		}
-				
+		System.out.println(id);
+		System.out.println(vo);
+		
+		List<BlogVo> list = blogService.findAllList();
+		System.out.println(list);
+		model.addAttribute("list", list);		
+		
 		return "blog/main";
 	}
-	
-//================================회원정보 수정======================================================	
+//================================기본설정 수정======================================================	
 //	@RequestMapping(value = {"/admin","/admin/basic"}, method = RequestMethod.GET)
 //	public String adminBasic(@PathVariable("id") String id) {
 //		return "blog/admin-basic";
@@ -56,17 +81,22 @@ public class BlogController {
 		blogService.BasicUpdate(vo);
 		return "redirect:/+id";
 	}
-//===========================카테고리 수정===========================================================	
+//===========================카테고리 추가===========================================================	
 	@RequestMapping(value = "admin/category",method = RequestMethod.GET)
-	public String adminCategory(@PathVariable("id") String id, Model model){
-		model.addAttribute("id",id);
+	public String adminCategory(
+			@PathVariable("id") String id, 
+			Model model){
+		List<BlogVo> list = blogService.findAllList();
+		System.out.println(list);
+		model.addAttribute("list",list);
 		
 		return "blog/admin-category";
 	}
 	
 	@RequestMapping(value = "admin/category",method = RequestMethod.POST)
-	public String adminCategory(){
-		
+	public String adminCategory(@PathVariable("id") String id, CategoryVo vo) {
+		vo.setId(id);
+		blogService.adminWrite(vo);
 		return "redirect:/+id";
 	}
 

@@ -34,7 +34,7 @@ public class UserService {
 		
 		userRepository.insert(userVo);
 		blogRepository.insert(blogVo);
-		categoryRepository.insert(categoryVo);
+		categoryRepository.BasicUpdate(categoryVo);
 		
 	}
 

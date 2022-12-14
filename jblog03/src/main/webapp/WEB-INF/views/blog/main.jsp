@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>JBlog</title>
+<title>JBlog</title>	
 <Link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/jblog.css">
 </head>
 <body>
@@ -32,8 +32,8 @@
 				<ul class="blog-list">
 					<li><a href="">연습용 임시 리스트</a> <span>2015/05/02</span>	</li>
 					<c:set var="count" value="${fn:length(list) }" />
-					<c:forEach items="${postList }" var="vo" varStatus="status">
-						<li><a href="">${vo.postTitle }</a></li> /*post*/
+					<c:forEach items="${list }" var="vo" varStatus="status">
+						<li><a href="">${vo.postTitle }</a><span>${vo.regDate }</span></li> 
 					</c:forEach>
 				</ul>
 			</div>

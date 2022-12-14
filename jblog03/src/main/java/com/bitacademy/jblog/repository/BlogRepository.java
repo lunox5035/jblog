@@ -24,7 +24,7 @@ public class BlogRepository {
 	}
 	
 	public List<BlogVo> findAll() {
-		return sqlSession.selectList("blog.findall");
+		return sqlSession.selectList("blog.findAll");
 	}
 	
 	public BlogVo findById(String id) {

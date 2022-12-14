@@ -5,9 +5,17 @@ public class CategoryVo {
 	private Long no;
 	private String title;
 	private String id;
+	private String explanation;
+	
+	public String getExplanation() {
+		return explanation;
+	}
+	public void setExplanation(String explanation) {
+		this.explanation = explanation;
+	}
 	@Override
 	public String toString() {
-		return "CategoryVo [no=" + no + ", title=" + title + ", id=" + id + "]";
+		return "CategoryVo [no=" + no + ", title=" + title + ", id=" + id + ", explanation=" + explanation + "]";
 	}
 	public Long getNo() {
 		return no;

@@ -10,8 +10,7 @@ select * from category;
 select * from post;
 select * from user;
 
-
-select a.user_id as ID, a.title,a.profile,b.no, b.title as categoryTitle,c.title as postTitle, c.content, c.reg_date as regDate
+select a.user_id as ID, a.title,a.profile,b.no, b.title as categoryTitle,c.title as postTitle, c.content, date_format(c.reg_date,'%Y/%m/%d') as regDate
 from blog a, category b, post c
 where a.user_id= b.id
 and b.no=c.category_no;
@@ -35,7 +34,10 @@ select * from category;
 
 insert category values(null,'기본 카테고리','bbc02131');
 
-#-----------------------------------------------------------------------
+#----------------------	-------------------------------------------------
 select * from post;
 
 insert into post values(null,"기본 글","내용",now(),1);
+
+
+alter table jblog.category alter column explanation not null;

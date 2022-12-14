@@ -10,7 +10,14 @@ public class BlogVo {
 	private String postTitle;
 	private String content;
 	private String regDate;
+	private String explanation;
 	
+	public String getExplanation() {
+		return explanation;
+	}
+	public void setExplanation(String explanation) {
+		this.explanation = explanation;
+	}
 	public String getId() {
 		return id;
 	}
@@ -62,7 +69,8 @@ public class BlogVo {
 	@Override
 	public String toString() {
 		return "BlogVo [id=" + id + ", title=" + title + ", profile=" + profile + ", no=" + no + ", categoryTitle="
-				+ categoryTitle + ", postTitle=" + postTitle + ", content=" + content + ", regDate=" + regDate + "]";
+				+ categoryTitle + ", postTitle=" + postTitle + ", content=" + content + ", regDate=" + regDate
+				+ ", explanation=" + explanation + "]";
 	}
 	
 	
