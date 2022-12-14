@@ -54,9 +54,9 @@ public class BlogController {
 			categotyNo=path2.get();
 		}
 		
-		List<BlogVo> list = blogService.findAllList();
+		List<BlogVo> list = blogService.findAllList(id);
 		model.addAttribute("list", list);		
-		
+		System.out.println(list);
 		return "blog/main";
 	}
 //================================기본설정 수정======================================================	
@@ -80,11 +80,10 @@ public class BlogController {
 	}
 //===========================카테고리 추가===========================================================	
 	@RequestMapping(value = "admin/category",method = RequestMethod.GET)
-	public String adminCategory(
-			@PathVariable("id") String id, 
-			Model model){
-		List<BlogVo> list = blogService.findAllList();
-		model.addAttribute("list",list);
+	public String adminCategory(@PathVariable("id") String id, Model model){
+		List<CategoryVo> categoryList = blogService.categotyAllList(id);
+		model.addAttribute("categoryList",categoryList);
+		System.out.println(categoryList);
 		
 		return "blog/admin-category";
 	}
@@ -92,10 +91,9 @@ public class BlogController {
 	@RequestMapping(value = "admin/category",method = RequestMethod.POST)
 	public String adminCategory(@PathVariable("id") String id, CategoryVo vo) {
 		vo.setId(id);
-		blogService.adminWrite(vo);
+		blogService.adminCategory(vo);
 		return "redirect:/+id";
 	}
-
 //=================================글쓰기==========================================================	
 	@RequestMapping(value = "admin/write",method = RequestMethod.GET)
 	public String adminWrite(@PathVariable("id") String id, Model model){

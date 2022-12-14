@@ -33,17 +33,17 @@
 		      			<th>삭제</th>      			
 		      		</tr>
 		      		<tr>
-						<td>3</td>
+						<td>1</td>
 						<td>미분류</td>
 						<td>10</td>
 						<td>카테고리를 지정하지 않은 경우</td>
 						<td><img src="${pageContext.request.contextPath}/assets/images/delete.jpg"></td>
 					</tr>  
-		      		<c:set var="count" value="${fn:length(list) }" />
-					<c:forEach items="${list }" var="vo" varStatus="status">
+		      		<c:set var="count" value="${fn:length(categoryList) }" />
+					<c:forEach items="${categoryList }" var="vo" varStatus="status">
 						<tr>
-							<td>${vo.no }</td>
-							<td>${vo.categoryTitle }</td>
+							<td>${status.index+1 }</td>
+							<td>${vo.title }</td>
 							<td></td>
 							<td>${vo.explanation }</td>
 							<td><img src="${pageContext.request.contextPath}/assets/images/delete.jpg"></td>

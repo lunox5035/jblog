@@ -8,4 +8,11 @@
 				values (null, #{title }, #{id },#{explanation })
 		]]>
 	</insert>
-</mapper>
+	
+	<select id="findAllById" resultType="categoryvo">
+		<![CDATA[
+			select no,title,id,explanation from category where	id = #{id }
+		
+		]]>
+	</select>
+</mapper>	

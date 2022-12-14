@@ -18,8 +18,8 @@ public class BlogService {
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
-	public List<BlogVo> findAllList() {
-		return blogRepository.findAll();
+	public List<BlogVo> findAllList(String id) {
+		return blogRepository.findAll(id);
 	}
 	
 	public BlogVo findBlog(String id) {
@@ -31,9 +31,12 @@ public class BlogService {
 	}
 
 //===========================카테고리 추가===========================================================	
-	public void adminWrite(CategoryVo vo) {
+	public void adminCategory(CategoryVo vo) {
 		categoryRepository.BasicUpdate(vo);
 		
+	}	
+	public List<CategoryVo> categotyAllList(String id) {
+		return categoryRepository.categotyAllList(id);
 	}
 //================================글쓰기===========================================================	
 	public void write(BlogVo vo) {

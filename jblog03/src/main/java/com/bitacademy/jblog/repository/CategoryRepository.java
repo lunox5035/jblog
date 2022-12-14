@@ -1,5 +1,7 @@
 package com.bitacademy.jblog.repository;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -18,4 +20,7 @@ public class CategoryRepository {
 			sqlSession.insert("category.insert", vo);
 		}
 		
+		public List<CategoryVo> categotyAllList(String id) {
+			return sqlSession.selectList("category.findAllById", id);
+		}
 }
