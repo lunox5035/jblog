@@ -53,11 +53,8 @@ public class BlogController {
 		}else if(path2.isPresent()) {
 			categotyNo=path2.get();
 		}
-		System.out.println(id);
-		System.out.println(vo);
 		
 		List<BlogVo> list = blogService.findAllList();
-		System.out.println(list);
 		model.addAttribute("list", list);		
 		
 		return "blog/main";
@@ -87,7 +84,6 @@ public class BlogController {
 			@PathVariable("id") String id, 
 			Model model){
 		List<BlogVo> list = blogService.findAllList();
-		System.out.println(list);
 		model.addAttribute("list",list);
 		
 		return "blog/admin-category";

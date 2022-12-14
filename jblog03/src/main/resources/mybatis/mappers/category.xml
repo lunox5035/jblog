@@ -5,7 +5,7 @@
 		<![CDATA[
 			insert 
 				into category 
-				values (null, #{title }, #{id })
+				values (null, #{title }, #{id },#{explanation })
 		]]>
 	</insert>
 </mapper>

@@ -22,15 +22,15 @@ public class UserService {
 
 //----------------------------------------------------------------------------------------------------
 	public void join(UserVo userVo,BlogVo blogVo,CategoryVo categoryVo) {
-//		System.out.println("userVo:"+userVo);
 
 		blogVo.setTitle(userVo.getName()+"님의 블로그");
+		blogVo.setProfile("기본 프로필");
 		blogVo.setId(userVo.getId());
 		
+		categoryVo.setTitle("기본 카테고리");
+		categoryVo.setExplanation("처음 생성되는 카테고리");
 		categoryVo.setId(userVo.getId());
 		
-//		System.out.println("blogVo:"+blogVo);
-//		System.out.println("categoryVo:"+categoryVo);
 		
 		userRepository.insert(userVo);
 		blogRepository.insert(blogVo);

@@ -18,9 +18,7 @@ public class UserRepository {
 //----------------------------------------------------------------------------------------------------
 
 	public void insert(UserVo vo) {
-//		System.out.println("1.userVo:"+vo);
 		sqlSession.insert("user.insert", vo);
-//		System.out.println("2.userVo:"+vo);
 		
 	}
 	
