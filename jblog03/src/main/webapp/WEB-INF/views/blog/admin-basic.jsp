@@ -12,7 +12,14 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<h1>admin basic</h1>
+			<c:choose>
+				<c:when test="${empty authUser }">
+					<h1>Spring 이야기</h1>
+				</c:when>
+				<c:otherwise>
+					<h1>${vo.title }</h1>
+				</c:otherwise>
+			</c:choose>
 			<ul>
 				<c:import url="/WEB-INF/views/includes/header.jsp" />
 			</ul>
