@@ -57,7 +57,33 @@ public class BlogController {
 		return "redirect:/+id";
 	}
 //===========================카테고리 수정===========================================================	
-
+	@RequestMapping(value = "admin/category",method = RequestMethod.GET)
+	public String adminCategory(@PathVariable("id") String id, Model model){
+		model.addAttribute("id",id);
+		
+		return "blog/admin-category";
+	}
 	
+	@RequestMapping(value = "admin/category",method = RequestMethod.POST)
+	public String adminCategory(){
+		
+		return "redirect:/+id";
+	}
+
 //=================================글쓰기==========================================================	
+	@RequestMapping(value = "admin/write",method = RequestMethod.GET)
+	public String adminWrite(@PathVariable("id") String id, Model model){
+		
+		model.addAttribute("id",id);
+
+		return "blog/admin-write";
+	}
+	
+	@RequestMapping(value = "admin/write",method = RequestMethod.POST)
+	public String adminWrite(@PathVariable("id")String id,BlogVo vo,Model model){
+		model.addAttribute("vo",vo);
+
+		blogService.write(vo);
+		return "redirect:/+id";
+	}
 }

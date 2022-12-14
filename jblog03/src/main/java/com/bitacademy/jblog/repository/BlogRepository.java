@@ -30,8 +30,13 @@ public class BlogRepository {
 	public BlogVo findById(String id) {
 		return sqlSession.selectOne("blog.findById",id);
 	}
+	public void write(BlogVo vo) {		
+		System.out.println("BlogRepository:"+vo);
+		sqlSession.insert("blog.write",vo);
+	}
 	
 	public void BasicUpdate(BlogVo vo) {
 		sqlSession.update("blog.BasicUpdate",vo);
 	}
+	
 }

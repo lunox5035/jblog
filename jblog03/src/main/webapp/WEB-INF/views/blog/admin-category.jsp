@@ -14,9 +14,7 @@
 		<div id="header">
 			<h1>${vo.title }</h1>
 			<ul>
-				<li><a href="${pageContext.request.contextPath}/user/login">로그인</a></li>
-				<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
-				<li><a href="${pageContext.request.contextPath }">블로그 관리</a></li>
+				<c:import url="/WEB-INF/views/includes/header.jsp" />
 			</ul>
 		</div>
 		<div id="wrapper">

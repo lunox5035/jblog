@@ -14,11 +14,8 @@
 		<div id="header">
 			<h1>${vo.title }</h1>
 			<ul>
-				<li><a href="${pageContext.request.contextPath}/user/login">로그인</a></li>
-				<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
-				<li><a href="${pageContext.request.contextPath }">블로그 관리</a></li>
+				<c:import url="/WEB-INF/views/includes/header.jsp" />
 			</ul>
-		</div>
 		<div id="wrapper">
 			<div id="content" class="full-screen">
 				<ul class="admin-menu">
@@ -31,7 +28,7 @@
 			      		<tr>
 			      			<td class="t">제목</td>
 			      			<td>
-			      				<input type="text" size="60" name="title">
+			      				<input type="text" size="60" name="postTitle">
 				      			<select name="category">
 				      				<option>미분류</option>
 				      				<option>자바</option>
