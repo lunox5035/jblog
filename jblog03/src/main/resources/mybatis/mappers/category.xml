@@ -11,8 +11,17 @@
 	
 	<select id="findAllById" resultType="categoryvo">
 		<![CDATA[
-			select no,title,id,explanation from category where	id = #{id }
-		
+			select no,title,id,explanation, (select count(*) from post where category_no = #{no }) as postCount
+			from category 
+			where	id = #{id }		
 		]]>
 	</select>
+	
+	<delete id="categoryDelete" parameterType="long">
+		SET foreign_key_checks = 0
+		delete from category where no = #{no }
+		SET foreign_key_checks = 1	
+		
+	</delete>
 </mapper>	
+	

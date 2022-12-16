@@ -29,11 +29,15 @@
 						<table class="admin-cat-write">
 							<tr>
 								<td class="t">제목</td>
-								<td><input type="text" size="60" name="postTitle">
-									<select name="category">
-										<option>미분류</option>
-										<option>자바</option>
-								</select></td>
+								<td>
+									<input type="text" size="60" name="postTitle">
+									<select name="category_no">
+										<c:set var="count" value="${fn:length(list) }" />
+										<c:forEach items='${list }' var='vo' varStatus='status'>
+											<option value=${vo.no }>${vo.categoryTitle }</option>										
+										</c:forEach>
+									</select>
+								</td>
 							</tr>
 							<tr>
 								<td class="t">내용</td>

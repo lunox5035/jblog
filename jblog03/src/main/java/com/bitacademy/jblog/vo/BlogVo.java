@@ -7,9 +7,6 @@ public class BlogVo {
 	private String profile;
 	private Long no;
 	private String categoryTitle;
-	private String postTitle;
-	private String content;
-	private String regDate;
 	private String explanation;
 	
 	public String getExplanation() {
@@ -48,29 +45,11 @@ public class BlogVo {
 	public void setCategoryTitle(String categoryTitle) {
 		this.categoryTitle = categoryTitle;
 	}
-	public String getPostTitle() {
-		return postTitle;
-	}
-	public void setPostTitle(String postTitle) {
-		this.postTitle = postTitle;
-	}
-	public String getContent() {
-		return content;
-	}
-	public void setContent(String content) {
-		this.content = content;
-	}
-	public String getRegDate() {
-		return regDate;
-	}
-	public void setRegDate(String regDate) {
-		this.regDate = regDate;
-	}
+	
 	@Override
 	public String toString() {
 		return "BlogVo [id=" + id + ", title=" + title + ", profile=" + profile + ", no=" + no + ", categoryTitle="
-				+ categoryTitle + ", postTitle=" + postTitle + ", content=" + content + ", regDate=" + regDate
-				+ ", explanation=" + explanation + "]";
+				+ categoryTitle + ", explanation=" + explanation + "]";
 	}
 	
 	

@@ -44,9 +44,9 @@
 						<tr>
 							<td>${status.index+1 }</td>
 							<td>${vo.title }</td>
-							<td></td>
+							<td>${vo.postCount }</td>
 							<td>${vo.explanation }</td>
-							<td><img src="${pageContext.request.contextPath}/assets/images/delete.jpg"></td>
+							<td><a href="${pageContext.request.contextPath }/${id }/admin/category/${vo.no }"><img src="${pageContext.request.contextPath}/assets/images/delete.jpg"></a></td>
 						</tr>
 					</c:forEach>		  
 				</table>

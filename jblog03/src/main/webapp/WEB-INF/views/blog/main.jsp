@@ -12,7 +12,7 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<h1>${vo.title }</h1>
+			<h1>${BlogVo.getTitle }</h1>
 			<ul>
 				<c:import url="/WEB-INF/views/includes/header.jsp" />
 			</ul>
@@ -33,7 +33,7 @@
 					<li><a href="">연습용 임시 리스트</a> <span>2015/05/02</span>	</li>
 					<c:set var="count" value="${fn:length(postList) }" />
 					<c:forEach items="${postList }" var="vo" varStatus="status">
-						<li><a href="">${vo.title }</a><span>${vo.regDate }</span></li> 
+						<li><a href="">${vo.postTitle }</a><span>${vo.regDate }</span></li> 
 					</c:forEach>
 				</ul>
 			</div>

@@ -31,12 +31,6 @@
 		]]>
 	</insert>
 	
-	<insert id="write" parameterType="blogvo">
-		<![CDATA[
-			insert into post values(null,#{title },#{content }, now(),null)
-		]]>
-	</insert>
-	
 	<update id="BasicUpdate">
 		<![CDATA[
 			update blog set title=#{title } 

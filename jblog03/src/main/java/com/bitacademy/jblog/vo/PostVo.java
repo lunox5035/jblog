@@ -1,22 +1,18 @@
 package com.bitacademy.jblog.vo;
 
 public class PostVo {
-	private String title;
+	private String postTitle;
 	private String content;
-	private String reg_date;
+	private String regDate;
 	private String category_no;
 	private Long no;
-	
-	@Override
-	public String toString() {
-		return "PostVo [title=" + title + ", content=" + content + ", reg_date=" + reg_date + ", category_no="
-				+ category_no + ", no=" + no + "]";
+	private String id;
+	private String categoryTitle;
+	public String getPostTitle() {
+		return postTitle;
 	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setPostTitle(String postTitle) {
+		this.postTitle = postTitle;
 	}
 	public String getContent() {
 		return content;
@@ -24,11 +20,11 @@ public class PostVo {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getReg_date() {
-		return reg_date;
+	public String getRegDate() {
+		return regDate;
 	}
-	public void setReg_date(String reg_date) {
-		this.reg_date = reg_date;
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
 	}
 	public String getCategory_no() {
 		return category_no;
@@ -42,5 +38,23 @@ public class PostVo {
 	public void setNo(Long no) {
 		this.no = no;
 	}
-
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getCategoryTitle() {
+		return categoryTitle;
+	}
+	public void setCategoryTitle(String categoryTitle) {
+		this.categoryTitle = categoryTitle;
+	}
+	@Override
+	public String toString() {
+		return "PostVo [postTitle=" + postTitle + ", content=" + content + ", regDate=" + regDate + ", category_no="
+				+ category_no + ", no=" + no + ", id=" + id + ", categoryTitle=" + categoryTitle + "]";
+	}
+	
+	
 }

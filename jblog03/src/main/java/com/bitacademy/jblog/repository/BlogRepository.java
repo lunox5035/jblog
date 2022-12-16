@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bitacademy.jblog.vo.BlogVo;
-import com.bitacademy.jblog.vo.CategoryVo;
 
 @Repository
 public class BlogRepository {
@@ -27,10 +26,7 @@ public class BlogRepository {
 	public BlogVo findById(String id) {
 		return sqlSession.selectOne("blog.findById",id);
 	}
-	public void write(BlogVo vo) {		
-		sqlSession.insert("blog.write",vo);
-	}
-	
+		
 	public void BasicUpdate(BlogVo vo) {
 		sqlSession.update("blog.BasicUpdate",vo);
 	}
