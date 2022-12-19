@@ -4,10 +4,10 @@ public class CategoryVo {
 
 	private Long no;
 	private String title;
-	private String id;
 	private String explanation;
-	private Long postCount;
+	private String id;
 	
+	private Long postCount;
 	
 	
 	public Long getPostCount() {

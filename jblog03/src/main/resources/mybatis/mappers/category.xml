@@ -9,7 +9,7 @@
 		]]>
 	</insert>
 	
-	<select id="findAllById" resultType="categoryvo">
+	<select id="findAllById" resultType="Long">
 		<![CDATA[
 			select no,title,id,explanation, (select count(*) from post where category_no = #{no }) as postCount
 			from category 

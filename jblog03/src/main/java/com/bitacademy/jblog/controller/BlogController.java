@@ -95,7 +95,7 @@ public class BlogController {
 	public String adminCategory(@PathVariable("id") String id, Model model){
 		List<CategoryVo> categoryList = blogService.categotyAllList(id);
 		model.addAttribute("categoryList",categoryList);
-		System.out.println(categoryList);
+		System.out.println("카테고리 내용 :"+categoryList);
 		
 		return "blog/admin-category";
 	}
