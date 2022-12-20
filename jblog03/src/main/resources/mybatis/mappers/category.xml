@@ -5,15 +5,15 @@
 		<![CDATA[
 			insert 
 				into category 
-				values (null, #{title }, #{id },#{explanation })
+				values (null, #{categoryTitle }, #{id },#{explanation })
 		]]>
 	</insert>
 	
-	<select id="findAllById" resultType="Long">
+	<select id="findAllById" resultType="categoryvo">
 		<![CDATA[
-			select no,title,id,explanation, (select count(*) from post where category_no = #{no }) as postCount
+			select no, title as categoryTitle, id, explanation, (select count(*) from post where category_no = 1) as postCount 
 			from category 
-			where	id = #{id }		
+			where id = #{id }		
 		]]>
 	</select>
 	

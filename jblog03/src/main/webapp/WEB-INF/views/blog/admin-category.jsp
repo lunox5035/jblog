@@ -39,14 +39,18 @@
 						<td>카테고리를 지정하지 않은 경우</td>
 						<td><img src="${pageContext.request.contextPath}/assets/images/delete.jpg"></td>
 					</tr>  
-		      		<c:set var="count" value="${fn:length(categoryList) }" />
+		      		<c:set var="count" value="${fn:length(categoryList) }"/>
 					<c:forEach items="${categoryList }" var="vo" varStatus="status">
 						<tr>
 							<td>${status.index+1 }</td>
-							<td>${vo.title }</td>
+							<td>${vo.categoryTitle }</td>
 							<td>${vo.postCount }</td>
 							<td>${vo.explanation }</td>
-							<td><a href="${pageContext.request.contextPath }/${id }/admin/category/${vo.no }"><img src="${pageContext.request.contextPath}/assets/images/delete.jpg"></a></td>
+							<td>
+								<a href="${pageContext.request.contextPath }/${id }/admin/category/${vo.no }">
+									<img src="${pageContext.request.contextPath}/assets/images/delete.jpg">
+								</a>
+							</td>
 						</tr>
 					</c:forEach>		  
 				</table>

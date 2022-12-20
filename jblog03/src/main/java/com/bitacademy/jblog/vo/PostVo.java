@@ -8,6 +8,7 @@ public class PostVo {
 	private Long no;
 	private String id;
 	private String categoryTitle;
+	
 	public String getPostTitle() {
 		return postTitle;
 	}
