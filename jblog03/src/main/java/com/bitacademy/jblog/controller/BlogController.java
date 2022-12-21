@@ -106,7 +106,7 @@ public class BlogController {
 		blogService.adminCategory(categorvo);
 		return "redirect:/+id";
 	}
-//===========================카테고리 삭제===========================================================	
+//============================카테고리 삭제===========================================================	
 	@RequestMapping(value = "admin/category/{no}",method = RequestMethod.GET)
 	public String adminDelete(@PathVariable("id") String id,@PathVariable("no") Long no) {
 		System.out.println("삭제:"+no+"=============================================");
